@@ -3,7 +3,7 @@ const router = express.Router();
 const MenuItem = require("./../models/menuItem");
 
 //GET method for menu :
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Use the Mongoose model to fetch all menuItems from the database
     const data = await MenuItem.find();
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 });
 
 //POST method for menu :
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const data = req.body; // Assuming the request body contains the person data
 
@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
 
 //Parameterized GET Method API for the Menu Item on the Basis of taste Type via using Express Router :
 
-router.get("/:taste", async (req, res) => {
+router.get('/:taste', async (req, res) => {
   try {
     const tasteType = req.params.taste;
     if (tasteType == "sweet" || tasteType == "sour" || tasteType == "spicy") {
@@ -54,7 +54,7 @@ router.get("/:taste", async (req, res) => {
 });
 
 //PUT Method API to update the MenuItem Records
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const menuId = req.params.id; // Extract the id of Menu Item from the URL parameter
     const updatedMenuData = req.body; // Updated data for the Menu Item
@@ -76,7 +76,7 @@ router.put("/:id", async (req, res) => {
 });
 
 //DELETE Method API to delete the MenuItem Records
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const menuId = req.params.id; // Extract the id of Menu Item from the URL parameter
 

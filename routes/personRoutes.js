@@ -4,7 +4,7 @@ const Person = require("./../models/person");
 
 //POST route to add a person :
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const data = req.body; // Assuming the request body contains the person data
 
@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
 });
 
 //GET method to get the person
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Use the Mongoose model to fetch all persons from the database
     const data = await Person.find();
@@ -36,7 +36,7 @@ router.get("/", async (req, res) => {
 });
 
 //Parametrized API calls
-router.get("/:workType", async (req, res) => {
+router.get('/:workType', async (req, res) => {
   //Here WorkType is name of a variable
 
   try {
@@ -55,7 +55,7 @@ router.get("/:workType", async (req, res) => {
 });
 
 //Update Route For Person :
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const personId = req.params.id; //Extract the id from the URL Parameter.
     const updatedPersonData = req.body; //Updated Data for the person
@@ -81,7 +81,7 @@ router.put("/:id", async (req, res) => {
 });
 
 //Delete Route For Person :
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const personId = req.params.id; //Extract the id from the URL Parameter.
 
