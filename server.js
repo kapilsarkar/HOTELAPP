@@ -16,7 +16,9 @@ const logRequest = (req, res, next) => {
   next(); //Move on to the next phase
 };
 
-app.get("/", logRequest, (req, res) => {
+app.use(logRequest)
+
+app.get("/", (req, res) => {
   res.send("Welcome to Our Hotel");
 });
 
