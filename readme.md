@@ -18,3 +18,5 @@
 - Endpoint: GET /menu [LINK](https://hotelapp-27dh.onrender.com/menu)
 
 - Description: Retrieves a list of all menu items in the system.
+
+- `Update all Menu Items`
