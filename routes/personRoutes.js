@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Person = require("./../models/person");
+const { jwtAuthMiddleware, generateToken } = require("./../jwt");
 
 //POST route to add a person :
 
-router.post('/signup', async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const data = req.body; // Assuming the request body contains the person data
 
@@ -14,7 +15,11 @@ router.post('/signup', async (req, res) => {
     //Save the newPerson to the database:
     const response = await newPerson.save();
     console.log("Person Data Saved");
-    res.status(200).json(response);
+
+    const token = generateToken(response.username);
+    console.log("Token is:", token);
+
+    res.status(200).json({ response: response, token: token });
   } catch (err) {
     console.log(err);
     res.status(500).json({ Error: "Internal Server Error" });
@@ -22,7 +27,7 @@ router.post('/signup', async (req, res) => {
 });
 
 //GET method to get the person
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Use the Mongoose model to fetch all persons from the database
     const data = await Person.find();
@@ -36,7 +41,7 @@ router.get('/', async (req, res) => {
 });
 
 //Parametrized API calls
-router.get('/:workType', async (req, res) => {
+router.get("/:workType", async (req, res) => {
   //Here WorkType is name of a variable
 
   try {
@@ -55,7 +60,7 @@ router.get('/:workType', async (req, res) => {
 });
 
 //Update Route For Person :
-router.put('/:id', async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const personId = req.params.id; //Extract the id from the URL Parameter.
     const updatedPersonData = req.body; //Updated Data for the person
@@ -81,7 +86,7 @@ router.put('/:id', async (req, res) => {
 });
 
 //Delete Route For Person :
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const personId = req.params.id; //Extract the id from the URL Parameter.
 
