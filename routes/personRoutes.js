@@ -16,7 +16,12 @@ router.post("/signup", async (req, res) => {
     const response = await newPerson.save();
     console.log("Person Data Saved");
 
-    const token = generateToken(response.username);
+    const payLoad = {
+      id: response.id,
+      username:response.username
+    }
+    console.log(JSON.stringify(payLoad))
+    const token = generateToken(payLoad);
     console.log("Token is:", token);
 
     res.status(200).json({ response: response, token: token });
