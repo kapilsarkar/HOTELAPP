@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Person = require("./../models/person");
 const { jwtAuthMiddleware, generateToken } = require("./../jwt");
+const { use } = require("passport");
 
 //POST route to add a person :
 
@@ -56,13 +57,31 @@ router.post("/login", async (req, res) => {
     //return token as response
     res.json({ token });
   } catch (err) {
-    console.log(err)
-    res.status(500).json({error:'Internal Server Error'})
+    console.log(err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+//Profile Route
+router.get("/profile", jwtAuthMiddleware, async (req, res) => {
+  try {
+    const userData = req.user;
+    console.log("User Data", userData);
+
+    // Extract user id from decoded token
+    const userId = userData.id;
+
+    // Find the user by id
+    const user = await Person.findById(userId);
+    res.status(200).json({ user });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
 //GET method to get the person
-router.get("/", async (req, res) => {
+router.get("/", jwtAuthMiddleware, async (req, res) => {
   try {
     // Use the Mongoose model to fetch all persons from the database
     const data = await Person.find();
