@@ -81,18 +81,16 @@ router.get("/profile", jwtAuthMiddleware, async (req, res) => {
 });
 
 //GET method to get the person
-router.get("/", jwtAuthMiddleware, async (req, res) => {
-  try {
-    // Use the Mongoose model to fetch all persons from the database
-    const data = await Person.find();
-    console.log("Person Data Fetched Successfully");
-    // Send the list of persons as a JSON response
-    res.status(200).json(data);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ Error: "Data Cannot be fetched" });
+router.get('/', jwtAuthMiddleware, async (req, res) =>{
+  try{
+      const data = await Person.find();
+      console.log('data fetched');
+      res.status(200).json(data);
+  }catch(err){
+      console.log(err);
+      res.status(500).json({error: 'Internal Server Error'});
   }
-});
+})
 
 //Parametrized API calls
 router.get("/:workType", async (req, res) => {

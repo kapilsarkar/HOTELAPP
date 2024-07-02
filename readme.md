@@ -1,5 +1,14 @@
 ### HOTEL - NODE-JS APP BACKEND PROJECT
 
+This Application is a Node-JS Based system developed using the Following tech stack :
+
+- Express-JS Framework
+
+- MongoDB for DataBase
+
+
+
+
 [LIVE LINK](https://hotelapp-27dh.onrender.com/)
 
 
