@@ -2,11 +2,17 @@
 
 This Application is a Node-JS Based system developed using the Following tech stack :
 
-- Express-JS Framework
+1.  Express-JS Framework
 
-- MongoDB for DataBase
+1.  MongoDB for DataBase
+
+ ---
 
 
+
+- The Application manages imformation related to person(staff) and menu items.
+
+- It has some endpoints to handle CRUD(Create,Read,Update,Delete) for both persons and menu items.
 
 
 [LIVE LINK](https://hotelapp-27dh.onrender.com/)
@@ -19,6 +25,10 @@ This Application is a Node-JS Based system developed using the Following tech st
 - Endpoint: GET /person [LINK](https://hotelapp-27dh.onrender.com/person)
 
 - Description: Retrieves a list of all persons in the system.
+
+- `Add a Person`
+
+- Endpoint : 
 
 
 
