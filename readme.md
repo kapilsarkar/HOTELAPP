@@ -6,7 +6,7 @@ This Application is a Node-JS Based system developed using the Following tech st
 
 1.  MongoDB for DataBase
 
- ---
+---
 
 - The Application manages imformation related to person(staff) and menu items.
 
@@ -15,7 +15,6 @@ This Application is a Node-JS Based system developed using the Following tech st
 [LIVE LINK](https://hotelapp-27dh.onrender.com/)
 
 ---
-
 
 ## Endpoints :
 
@@ -31,11 +30,15 @@ This Application is a Node-JS Based system developed using the Following tech st
 
 - Description: Retrieves a list of all persons in the system.
 
+---
+
 - `Add a Person`
 
 - Endpoint on Local Host : `POST/person`
 
 - Description : Adds a person to record such as name,age,work,mobile email,address,salary,username,password.
+
+---
 
 - `Get Persons by work type : manager,chef,waiter`
 
@@ -43,14 +46,17 @@ This Application is a Node-JS Based system developed using the Following tech st
 
 - Example : `GET/person/manager`
 
-- Endpoint: `GET/person/manager` [LINK](https://hotelapp-27dh.onrender.com/person/manager) 
+- Endpoint: `GET/person/manager` [LINK](https://hotelapp-27dh.onrender.com/person/manager)
 
+---
 
 - `Update a person `
 
 - Endpoint : `PUT/person/:id`
 
 - Description : Updates the details of a specific person identified by their ID.
+
+---
 
 - `Delete a person`
 
@@ -70,12 +76,15 @@ This Application is a Node-JS Based system developed using the Following tech st
 
 - Description: Retrieves a list of all menu items in the system.
 
-- `Add a menu Item` 
+---
+
+- `Add a menu Item`
 
 - Endpoint : `POST/menu`
 
 - Description : Adds a menu item to the record with details such as name, price, taste, etc.
 
+---
 
 - `Get menu item by taste`
 
@@ -87,11 +96,15 @@ This Application is a Node-JS Based system developed using the Following tech st
 
 - Description : Retrieves a list of menu items based on their taste (e.g., sweet, spicy, sour).
 
+---
+
 - `Update all Menu Items`
 
 - Endpoint : `PUT/menu:id`
 
 - Description : Updates the details of a specific menu item identified by its ID.
+
+---
 
 - `Delete a menu item`
 
@@ -127,11 +140,11 @@ The Person data model represents information about staff members in the hotel.
 
 - `username :` String (Person's username)
 
-- `password :`  String (Persons Password)
+- `password :` String (Persons Password)
 
 ---
 
-- Example : 
+- Example :
 
 `{
 "name": "Akshay",
@@ -143,7 +156,7 @@ The Person data model represents information about staff members in the hotel.
 "salary": 70000,
 "username": "iamakshaytoken",
 "password": "$2b$10$BUIhhNIx9niPxgo/T0dDMOlzCcQR7aZIK4lBmgL0x1/Fx9X2dVKva",
-} `
+}`
 
 ---
 
@@ -165,7 +178,7 @@ The MenuItem data model represents information about menu items available in the
 
 - `num_sales `: Number (Number of sales for the item, default is 0)
 
-- Example : 
+- Example :
 
 `{
 "name": "Matar Panner",
@@ -179,6 +192,7 @@ The MenuItem data model represents information about menu items available in the
 }`
 
 ---
+
 ### Usage :
 
 Install Dependencies :
