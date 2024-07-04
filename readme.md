@@ -146,7 +146,8 @@ The Person data model represents information about staff members in the hotel.
 
 - Example :
 
-`{
+```json 
+{
 "name": "Akshay",
 "age": 50,
 "work": "manager",
@@ -156,7 +157,7 @@ The Person data model represents information about staff members in the hotel.
 "salary": 70000,
 "username": "iamakshaytoken",
 "password": "$2b$10$BUIhhNIx9niPxgo/T0dDMOlzCcQR7aZIK4lBmgL0x1/Fx9X2dVKva",
-}`
+} 
 
 ---
 
@@ -180,7 +181,8 @@ The MenuItem data model represents information about menu items available in the
 
 - Example :
 
-`{
+``` json
+{
 "name": "Matar Panner",
 "price": 59.99,
 "taste": "spicy",
